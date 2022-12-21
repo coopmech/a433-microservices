@@ -7,6 +7,8 @@ services:
   # tambahkan service item-db
     image: docker.io/mongo:3 
     # image berasal dari docker hub
+    restart : always
+    # penerapan restart policy
     volumes: 
     # delegasi volumes
       - app-db:/data/db 
