@@ -1,0 +1,37 @@
+Attaching to appmongo_item-app_1, appmongo_item-db_1
+item-db_1   | 2022-12-21T04:18:58.417+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=358f3e7c7fbd
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] db version v3.6.23
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] modules: none
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten] build environment:
+item-db_1   | 2022-12-21T04:18:58.421+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+item-db_1   | 2022-12-21T04:18:58.422+0000 I CONTROL  [initandlisten]     distarch: x86_64
+item-db_1   | 2022-12-21T04:18:58.422+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+item-db_1   | 2022-12-21T04:18:58.422+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+item-db_1   | 2022-12-21T04:18:58.423+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+item-db_1   | 2022-12-21T04:18:58.423+0000 I STORAGE  [initandlisten] 
+item-db_1   | 2022-12-21T04:18:58.424+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+item-db_1   | 2022-12-21T04:18:58.424+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+item-db_1   | 2022-12-21T04:18:58.424+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1448M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+item-db_1   | 2022-12-21T04:18:59.301+0000 I STORAGE  [initandlisten] WiredTiger message [1671596339:301465][1:0x7f625049da40], txn-recover: Main recovery loop: starting at 1/25472
+item-db_1   | 2022-12-21T04:18:59.403+0000 I STORAGE  [initandlisten] WiredTiger message [1671596339:403085][1:0x7f625049da40], txn-recover: Recovering log 1 through 2
+item-db_1   | 2022-12-21T04:18:59.468+0000 I STORAGE  [initandlisten] WiredTiger message [1671596339:468626][1:0x7f625049da40], txn-recover: Recovering log 2 through 2
+item-db_1   | 2022-12-21T04:18:59.517+0000 I STORAGE  [initandlisten] WiredTiger message [1671596339:517516][1:0x7f625049da40], txn-recover: Set global recovery timestamp: 0
+item-db_1   | 2022-12-21T04:18:59.552+0000 I CONTROL  [initandlisten] 
+item-db_1   | 2022-12-21T04:18:59.552+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+item-db_1   | 2022-12-21T04:18:59.553+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+item-db_1   | 2022-12-21T04:18:59.553+0000 I CONTROL  [initandlisten] 
+item-db_1   | 2022-12-21T04:18:59.575+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+item-db_1   | 2022-12-21T04:18:59.576+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+item-db_1   | 2022-12-21T04:18:59.577+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+item-db_1   | 2022-12-21T04:18:59.577+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+item-db_1   | 2022-12-21T04:19:11.675+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:35294 #1 (1 connection now open)
+item-db_1   | 2022-12-21T04:19:11.681+0000 I NETWORK  [conn1] received client metadata from 172.18.0.3:35294 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.15.0-1025-gcp" }, platform: "Node.js v14.21.2, LE, mongodb-core: 2.1.20" }
+item-app_1  | 
+item-app_1  | > docker-software-delivery@1.0.0 start /app
+item-app_1  | > node ./bin/www
+item-app_1  | 
+item-app_1  | NODE_ENV: production
+item-app_1  | Connected to database
