@@ -20,7 +20,7 @@ jobs:
           command: git clone https://github.com/coopmech/a433-microservices -b karsajobs && cd a433-microservices && docker run --rm --interactive hadolint/hadolint < Dockerfile
       - run:
           name: test-app
-          command: wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz && ls /usr/local/go && ls /usr/local/go/bin && export PATH=$PATH:/usr/local/go/bin && ln -s /bin/sh/go /usr/local/go/bin/go  && /usr/local/go/bin/go test -v -short --count=1 $(go list ./...)
+          command: wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz && ls /usr/local/go && ls /usr/local/go/bin && export PATH=$PATH:/usr/local/go/bin && cd /usr/local/go/bin && ./go test -v -short --count=1 $(go list ./...)
       - run:
           name: build-app-karsajobs
           command: export PASSWORD_REPO=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 && echo $PASSWORD_REPO | docker login ghcr.io --username coopmech --password-stdin && docker push ghcr.io/coopmech/karsajobs:v1
