@@ -14,7 +14,7 @@ jobs:
       # Lint the Dockerfile
       - run:
           name: lint-dockerfile
-          command: docker run --rm --interactive hadolint/hadolint < Dockerfile
+          command: docker run --rm --interactive hadolint/hadolint < a433-microservices/Dockerfile
       - run:
           name: test-app
           command: go test -v -short --count=1 $(go list ./...)
