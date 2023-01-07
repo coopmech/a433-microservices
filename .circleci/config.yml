@@ -13,6 +13,9 @@ jobs:
       - setup_remote_docker
       # Lint the Dockerfile
       - run:
+          name: authentication
+          command: export PASSWORD_DOCKER_HUB=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 && echo $PASSWORD_DOCKER_HUB | docker login ghcr.io --username phanatic --password-stdin
+      - run:
           name: lint-dockerfile
           command: docker run --rm --interactive hadolint/hadolint < Dockerfile
       - run:
