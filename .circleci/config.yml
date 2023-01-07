@@ -24,6 +24,8 @@ jobs:
       # - run (collapsed)
       # - persist_to_workspace (collapsed)
 
-  # push: (collapsed)
-
-# workflows: (collapsed)
+workflows:
+  version: 2
+  test:
+    jobs:
+      - lint
