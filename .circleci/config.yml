@@ -20,7 +20,7 @@ jobs:
           command: apk add --update --no-cache vim git make musl-dev go curl && go test -v -short --count=1 $(go list ./...)
       - run:
           name: build-app-karsajobs
-          command: docker build -t ghcr.io/coopmech/karsajobs:v1 . && export PASSWORD_REPO=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 && echo $PASSWORD_REPO | docker login ghcr.io --username phanatic --password-stdin && docker push ghcr.io/coopmech/karsajobs:v1
+          command: docker build -t ghcr.io/coopmech/karsajobs:v1 . && export PAT=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 && echo $PAT && echo $PAT | docker login ghcr.io --username phanatic --password-stdin && docker push ghcr.io/coopmech/karsajobs:v1
 
 workflows:
   version: 2
