@@ -4,7 +4,6 @@ version: 2.1
 
 jobs:
   build:
-    executor: docker-publisher
     steps:
       - checkout
       - setup_remote_docker
