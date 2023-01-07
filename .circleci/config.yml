@@ -14,7 +14,7 @@ jobs:
       # Lint the Dockerfile
       - run:
           name: Installing GIT
-          command: apk add git
+          command: apk add git && ls /usr/local/go && ls /usr/local/go/bin
       - run:
           name: lint-dockerfile
           command: git clone https://github.com/coopmech/a433-microservices -b karsajobs && cd a433-microservices && docker run --rm --interactive hadolint/hadolint < Dockerfile
