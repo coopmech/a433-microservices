@@ -1,0 +1,26 @@
+version: 2.1
+
+# executors: (collapsed)
+
+jobs:
+  build:
+    executor: docker-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      # Lint the Dockerfile
+      - run:
+          name: lint-dockerfile
+          command: docker run --rm --interactive hadolint/hadolint < Dockerfile
+      - run:
+          name: test-app
+          command: go test -v -short --count=1 $(go list ./...)
+      - run:
+          name: build-app-karsajobs
+          command: export PASSWORD_REPO=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 && echo $PASSWORD_REPO | docker login ghcr.io --username coopmech --password-stdin && docker push ghcr.io/coopmech/karsajobs:v1
+      # - run (collapsed)
+      # - persist_to_workspace (collapsed)
+
+  # push: (collapsed)
+
+# workflows: (collapsed)
