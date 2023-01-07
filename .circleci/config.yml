@@ -21,8 +21,6 @@ jobs:
       - run:
           name: build-app-karsajobs
           command: export PASSWORD_REPO=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 && echo $PASSWORD_REPO | docker login ghcr.io --username coopmech --password-stdin && docker push ghcr.io/coopmech/karsajobs:v1
-      # - run (collapsed)
-      # - persist_to_workspace (collapsed)
 
 workflows:
   version: 2
