@@ -1,10 +1,13 @@
 version: 2.1
 
-# executors: (collapsed)
+executors:
+  docker:
+    docker:
+      - image: docker:stable
 
 jobs:
   build:
-    executor: docker-publisher
+    executor: docker
     steps:
       - checkout
       - setup_remote_docker
