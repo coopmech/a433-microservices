@@ -1,0 +1,30 @@
+
+version: 2.1
+
+executors:
+  docker:
+    docker:
+      - image: docker:stable
+
+jobs:
+  build:
+    executor: docker
+    steps:
+      - checkout
+      - setup_remote_docker
+      # Lint the Dockerfile
+      - run:
+          name: authentication
+          command: echo $PAT | docker login ghcr.io --username phanatic --password-stdin
+      - run:
+          name: lint-dockerfile
+          command: docker run --rm --interactive hadolint/hadolint < Dockerfile
+      - run:
+          name: build-app-karsajobs-ui
+          command: docker build -t ghcr.io/coopmech/karsajobs:v1 . && docker push ghcr.io/coopmech/karsajobs-ui:latest
+
+workflows:
+  version: 2
+  build-lint:
+    jobs:
+      - build
