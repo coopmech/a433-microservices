@@ -14,7 +14,7 @@ jobs:
       # Lint the Dockerfile
       - run:
           name: authentication
-          command: export PASSWORD_DOCKER_HUB=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 && echo $PASSWORD_DOCKER_HUB | docker login ghcr.io --username phanatic --password-stdin
+          command: echo $PAT | docker login ghcr.io --username phanatic --password-stdin
       - run:
           name: lint-dockerfile
           command: docker run --rm --interactive hadolint/hadolint < Dockerfile
