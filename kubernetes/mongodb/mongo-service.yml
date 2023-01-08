@@ -10,3 +10,4 @@ spec:
   selector:
     app: database
   type: ClusterIP
+#menentukan service manifest
