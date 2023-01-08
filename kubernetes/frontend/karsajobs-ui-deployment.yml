@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: karsajobsui
+  labels:
+    app: microservices
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: microservices
+        tier: frontend
+    spec:
+      containers:
+      - name: karsajobs-frontend
+        image: ghcr.io/coopmech/karsajobs-ui:v1
+        ports:
+          - containerPort: 8000

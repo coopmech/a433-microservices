@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: karsajobs
+  labels:
+    app: microservices
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: microservices
+        tier: backend
+    spec:
+      containers:
+      - name: karsajobs-backend
+        image: ghcr.io/coopmech/karsajobs:latest
+        livenessProbe:
+          exec:
+             command:
+               - cat
+               - /tmp/healthy
+          initialDelaySeconds: 10
+          periodSeconds: 10    
+        env:
+          - name: APP_PORT
+            value: "8080"
+          - name: MONGO_HOST
+            value: mongodb-0.mongodb.default
+          - name: MONGO_USER 
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: MONGO_ROOT_USERNAME 
+          - name: MONGO_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: MONGO_ROOT_PASSWORD
