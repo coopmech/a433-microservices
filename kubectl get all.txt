@@ -1,0 +1,27 @@
+dani_rnd2021@deploy-node:~/production/code/karsajobs/a433-microservices$ kubectl get all
+NAME                               READY   STATUS    RESTARTS       AGE
+pod/karsajobs-6fb5b58784-2ljtm     1/1     Running   0              10s
+pod/karsajobsui-67c476d4b9-b26ld   1/1     Running   1 (148m ago)   4h4m
+pod/mongodb-0                      1/1     Running   0              131m
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/karsajobs     NodePort    10.100.203.212   <none>        8080:30449/TCP   5h25m
+service/karsajobsui   NodePort    10.111.99.93     <none>        8000:32493/TCP   4h26m
+service/kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP          26h
+service/mongodb       ClusterIP   10.110.199.144   <none>        27017/TCP        3h57m
+
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/karsajobs     1/1     1            1           121m
+deployment.apps/karsajobsui   1/1     1            1           4h25m
+
+NAME                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/karsajobs-555f5c8866     0         0         0       104m
+replicaset.apps/karsajobs-6fb5b58784     1         1         1       77m
+replicaset.apps/karsajobs-7765d6f554     0         0         0       121m
+replicaset.apps/karsajobs-f4b69974b      0         0         0       117m
+replicaset.apps/karsajobsui-67c476d4b9   1         1         1       4h4m
+replicaset.apps/karsajobsui-68c65bdb5f   0         0         0       4h25m
+
+NAME                       READY   AGE
+statefulset.apps/mongodb   1/1     6h42m
+dani_rnd2021@deploy-node:~/production/code/karsajobs/a433-microservices$ 
