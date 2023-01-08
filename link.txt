@@ -1,0 +1,10 @@
+Github Repository
+https://github.com/coopmech/a433-microservices.git
+
+Github Package
+
+karsajobs
+ghcr.io/coopmech/karsajobs:latest
+
+karsajobs-ui
+ghcr.io/coopmech/karsajobs-ui:latest
