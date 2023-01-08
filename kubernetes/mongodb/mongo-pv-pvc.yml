@@ -1,9 +1,12 @@
 apiVersion: v1
+#Menentukan Versi API
 kind: PersistentVolume
+#Menentukan jenis deployment
 metadata:
     name: mongodb-pv2
     labels:
       type: local
+#Menentukan metadata nama dan label
 spec:
   storageClassName: manual
   capacity:
@@ -12,6 +15,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: /mnt/data2
+ #spesifikasi penyimpanan pv
 --- 
 apiVersion: v1 
 kind: PersistentVolumeClaim
@@ -24,3 +28,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
+ #mendelegasikan pvc claim
